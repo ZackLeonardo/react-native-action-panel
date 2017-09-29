@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 
-import {ActionPanel} from '@zdy/react-native-action-panel';
+import {ActionPanelSwiper} from '@zdy/react-native-action-panel';
 
 
 export default class Test extends React.Component{
@@ -37,20 +37,33 @@ export default class Test extends React.Component{
         },{
           icon: 'camera',
           text: 'camera',
-        },],
-        numColumns: 4,
+        },{
+          icon: 'photo',
+          text: '照片',
+        },{
+          icon: 'camera',
+          text: '相机',
+        },{
+          iconImage: 'https://img3.doubanio.com/img/fmadmin/large/708963.jpg',
+          text: 'photo',
+        },{
+          iconImage: require('./media/1.jpg'),
+          text: 'video',
+        }],
+        numColumns: 3,
     }
     return (
       <View style={styles.container}>
-        <ActionPanel {...actionPanelProps}/>
+        <ActionPanelSwiper {...actionPanelProps}/>
       </View>
+
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    position: 'absolute',
-    bottom: 0,
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
   },
 });

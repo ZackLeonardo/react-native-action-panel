@@ -21,19 +21,18 @@ export default class ActionPanel extends React.Component{
     this._numColumns = this.props.numColumns;
 
     do {
-      this._space = (deviceWidth - this._numColumns * 80) / (this._numColumns + 1) / 2;
+      this._space = (deviceWidth - this._numColumns * this.props.iconSize) / (this._numColumns + 1) / 2;
       this._numColumns -= 1;
     }
     while(this._space < 0);
     this._numColumns += 1;
-
-    console.log(this._space);
   }
 
   _renderItem(item, index){
     return (
-      <View style={{margin: this._space}}>
-        <ActionIcon {...item}/>
+      <View style={{marginLeft: this._space, marginRight: this._space}}>
+        <ActionIcon {...item} {...this.props}
+          onPress={this.props.onPress}/>
       </View>
     );
   }
@@ -80,6 +79,7 @@ ActionPanel.defaultProps = {
 ActionPanel.propTypes = {
   actionIcons: PropTypes.array,
   numColumns: PropTypes.number,
+  onPress: PropTypes.func,
 }
 
 const styles = StyleSheet.create({
@@ -90,5 +90,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-start',
+    marginTop: 10,
+    marginBottom: 10,
   },
 });

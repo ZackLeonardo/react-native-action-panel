@@ -9,12 +9,17 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 
-import ActionIcon from './ActionIcon';
+import {ActionIcon} from '@zdy/react-native-action-panel';
 
 export default class Test extends React.Component{
   constructor(props){
     super(props);
 
+    this._onPress = this._onPress.bind(this);
+  }
+
+  _onPress(text){
+    console.log('op:'+ text);
   }
 
   render(){
@@ -24,7 +29,8 @@ export default class Test extends React.Component{
     };
     return (
       <View style={styles.container}>
-        <ActionIcon {...actionIconProps} />
+        <ActionIcon {...actionIconProps}
+          onPress={this._onPress}/>
       </View>
 
 

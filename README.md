@@ -18,6 +18,9 @@ Check full example in the `Example` folder.
 
 ## Demo
 ![Demo](https://github.com/ZackLeonardo/react-native-action-panel/blob/master/example/screen%20shot.png)
+![Demo](https://github.com/ZackLeonardo/react-native-action-panel/blob/master/example/screen%20shot%20swiper.png)
+
+
 
 ## License
 

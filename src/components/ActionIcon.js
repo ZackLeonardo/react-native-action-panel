@@ -35,7 +35,7 @@ export default class ActionIcon extends Component {
     return (
       <TouchableOpacity
         activeOpacity={0.7}
-        onPress={onPress}
+        onPress={()=>{onPress(text)}}
         style={[styles.container, {
           height: iconSize,
           width: iconSize,
@@ -92,7 +92,6 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
-    height: 100,
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: '#808080',
     borderRadius: 10,
