@@ -15,6 +15,10 @@ yarn add file:/...path.../react-native-action-panel
 
 Check full example in the `Example` folder.
 
+
+## Demo
+![Demo](https://github.com/ZackLeonardo/react-native-action-panel/blob/master/example/screen%20shot.png)
+
 ## License
 
 [MIT License](http://opensource.org/licenses/mit-license.html). © Zou Deyi
